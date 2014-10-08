@@ -12,6 +12,7 @@ notify = require 'gulp-notify'
 sourcemaps = require 'gulp-sourcemaps'
 jade = require 'gulp-jade'
 connect = require 'gulp-connect'
+gulpBowerFiles = require 'main-bower-files'
 
 onError = (err) ->
   # notify
@@ -45,12 +46,16 @@ gulp.task 'templates', ->
     .pipe jade()
     .pipe gulp.dest 'build/'
 
+gulp.task 'bower-files', ->
+  return gulp.src( gulpBowerFiles() )
+    .pipe gulp.dest 'build/bower_components'
+
 gulp.task 'connect', ->
-  connect.server()
-    # root: 'build'
+  connect.server
+    root: 'build'
     # livereload: true
 
-gulp.task 'build', ['css', 'coffee', 'templates']
+gulp.task 'build', ['css', 'coffee', 'templates', 'bower-files']
 gulp.task 'test', ['build', 'build-js-test', 'build-html-test'], (done) ->
   karma.start({
     configFile: __dirname + '/karma.conf.js'

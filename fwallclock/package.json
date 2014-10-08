@@ -12,6 +12,7 @@
     "coffee-script": "latest",
     "gulp": "^3.8.7",
     "gulp-autoprefixer": "0.0.10",
+    "main-bower-files": "latest",
     "gulp-coffee": "latest",
     "gulp-concat": "^2.3.4",
     "gulp-connect": "^2.0.6",
