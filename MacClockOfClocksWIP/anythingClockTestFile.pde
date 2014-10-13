@@ -25,9 +25,6 @@ void drawCircles()
     int x = y = 100;
     for (int i=1; i <= 128; i++) {
 
-        //fill(80);
-        //ellipse(x, y, 80, 80);
-
         pushMatrix();
 
         translate(x, y);
@@ -41,8 +38,6 @@ void drawCircles()
         rotate(angle2);
         fill(255);
         rect(0, 0, 3, 80/2 - 10, 15);
-
-        i.update(mouseX, mouseY);
 
         popMatrix();
 
@@ -58,10 +53,3 @@ void drawCircles()
     }
 
 }
-
-
-
-
-
-
-
