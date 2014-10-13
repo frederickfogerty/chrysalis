@@ -9,7 +9,7 @@ void setup()
 
 {
 
-  size(1900, 900);
+  size(1850, 900);
 
   smooth();
 
